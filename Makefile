@@ -22,7 +22,7 @@ fetch-latest-lodex: ## Fetch the latest version of lodex
 
 custom-config: ## Copy a custom config file and docker-compose to lodex
 	@echo "Copying a custom config file to lodex"
-	cp ./config.js lodex/config.js
+	cp ./config.json lodex/config.json
 	@echo "The custom config file is now in lodex/config.js"
 	@echo "Copying a custom docker-compose to lodex"
 	cp ./docker-compose.yml lodex/docker-compose.yml
