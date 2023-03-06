@@ -1,0 +1,30 @@
+name: CI / CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+ 
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Deploy
+    # if: github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Setup SSH environment
+      run: mkdir -p .secrets && echo "${{ secrets.SERVER_PRIVATE_KEY }}" > .secrets/hcl.pem && chmod 0400 .secrets/hcl.pem
+
+    - name: Setup deploy environment
+      run: echo 'SERVER_USER=${{ secrets.SERVER_USER }}' >> .secrets/.env && echo 'SERVER_HOSTNAME=${{ secrets.SERVER_HOSTNAME }}' >> .secrets/.env
+    
+    - name: Test SSH Connection
+      run: make production-ssh-test
+
+    - name: Deploy to Production
+      run: make production-deploy

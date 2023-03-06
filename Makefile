@@ -13,6 +13,13 @@ fetch-latest-lodex: ## Fetch the latest version of lodex
 	rm lodex.tar.gz
 	@echo "The latest version of Lodex is now in the lodex folder"
 
+custom-config: ## Copy a custom config file and docker-compose to lodex
+	@echo "Copying a custom config file to lodex"
+	cp ./config.js lodex/config.js
+	@echo "The custom config file is now in lodex/config.js"
+	@echo "Copying a custom docker-compose to lodex"
+	cp ./docker-compose.yml lodex/docker-compose.yml
+	@echo "The custom docker-compose is now in lodex/docker-compose.yml"
 
 install-lodex: ## Install lodex
 	@echo "Installing lodex"
@@ -23,3 +30,28 @@ start-lodex: ## Start lodex
 	@echo "Starting lodex"
 	@(${MAKE} -C lodex run-dev)
 	@echo "Lodex is now started"
+
+start-prod: ## Start lodex in production mode
+	@echo "Starting lodex in production mode"
+	@(${MAKE} -C lodex run)
+	@echo "Lodex is now started in production mode"
+
+production-ssh-test: ## Test SSH connection to production server
+	ssh -T \
+        -o StrictHostKeyChecking=no \
+		-i .secrets/hcl.pem \
+		${SERVER_USER}@${SERVER_HOSTNAME} \
+		exit
+
+production-deploy: ## Deploy HCL lodex to AWS
+	scp \
+        -o StrictHostKeyChecking=no \
+		-i .secrets/hcl.pem \
+		docker-compose.yml config.json Makefile run-production.sh \
+		${SERVER_USER}@${SERVER_HOSTNAME}:~
+
+	ssh \
+        -o StrictHostKeyChecking=no \
+	 	-i .secrets/hcl.pem \
+	 	${SERVER_USER}@${SERVER_HOSTNAME} \
+	 	'./run-production.sh'
