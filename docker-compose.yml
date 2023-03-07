@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+    lodex:
+        build:
+            context: .
+        environment:
+            http_proxy: ${http_proxy}
+            https_proxy: ${https_proxy}
+            NODE_OPTIONS: ${NODE_OPTIONS}
+            EZMASTER_MONGODB_HOST_PORT: 'mongo:27017'
+            EZMASTER_TECHNICAL_NAME: 'lodex'
+            no_proxy: 'localhost,127.0.0.1,'
+            BABEL_DISABLE_CACHE: 1
+            REDIS_URL: 'redis://localhost:6379'
+        volumes:
+            - ./upload:/app/upload
+        links:
+            - mongo
+        ports:
+            - 80:3000
+    mongo:
+        image: mongo:4.4.4-bionic
+        container_name: lodex-database
+        ports:
+            - 27017:27017
