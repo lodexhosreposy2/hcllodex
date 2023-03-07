@@ -1,0 +1,98 @@
+:root {
+    --blue-orage: #004563;
+    --blue-hcl: #00ade9;
+    --bleu-pale: #9dd3cf; 
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Calibri', sans-serif;
+}
+
+.header {
+    background-color: var(--blue-orage);
+}
+.header__content {
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.header__content-logo {
+    max-width: 100px;
+}
+.header__content-title {
+    color: var(--white);
+    font-size: 1.3em;
+    padding: 0;
+}
+
+.footer {
+    background-color: var(--blue-orage);
+    color: var(--white);
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.footer--login {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.footer__link {
+    color: var(--white);
+    cursor: pointer;
+}
+
+.footer__link:hover {
+    color: var(--white);
+}
+
+.footer__follow {
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.footer__socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer__socials-item {
+    background-color: var(--blue-hcl);
+    border-radius: 50%;
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer__socials-item svg path {
+    fill: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        background-image: url('../assets/grid.png');
+        background-position: right;
+        background-repeat: no-repeat;
+    }
+    .header__content {
+        padding: 1rem 0px;
+    }
+    .header__content-title {
+        font-size: 2em;
+    }
+
+    .header__content-grid {
+        display: block;
+    }
+}
