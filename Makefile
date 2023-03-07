@@ -38,6 +38,11 @@ start-lodex: ## Start lodex
 	@(${MAKE} -C lodex run-dev)
 	@echo "Lodex is now started"
 
+setup-theme: ## Set HCL theme to lodex
+	@echo "Setting HCL theme to lodex"
+	cp -r ./theme/* ./lodex/src/app/custom/
+	@echo "HCL theme is now set to lodex"
+	
 start-prod: ## Start lodex in production mode
 	@echo "Starting lodex in production mode"
 	cd lodex && \
