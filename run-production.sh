@@ -6,5 +6,6 @@ docker rmi lodex-lodex
 
 make fetch-latest-lodex
 make custom-config
+make setup-theme
 chmod 777 lodex/upload
 make start-prod

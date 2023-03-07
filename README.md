@@ -31,7 +31,7 @@ Then, run:
 make production-deploy
 ```
 
-This command is copying the `Makefile`, the `docker-compose.yml`, `config.json` and the `run-production.sh` files to the server, and then run `run-production.sh` on the server which fetch latest lodex release, copy custom configuration files, build and start the project.
+This command is copying the `Makefile`, the `docker-compose.yml`, `config.json` and the `run-production.sh` files to the server, and then run `run-production.sh` on the server which fetch latest lodex release, copy custom configuration files and HCL theme, build and start the project.
 
 To restart containers on your server, run:
 
