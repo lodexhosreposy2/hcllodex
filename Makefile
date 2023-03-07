@@ -40,7 +40,8 @@ start-lodex: ## Start lodex
 
 start-prod: ## Start lodex in production mode
 	@echo "Starting lodex in production mode"
-	@(${MAKE} -C lodex run)
+	cd lodex && \
+	docker-compose up --force-recreate -d
 	@echo "Lodex is now started in production mode"
 
 production-ssh-test: ## Test SSH connection to production server
