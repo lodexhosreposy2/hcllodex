@@ -139,15 +139,26 @@
     </body>
 
     <script>
-        const url = window.location.href;
-        // if url contains contains `login` or `register` then set class to footer
-        if (url.includes("login") || url.includes("register")) {
-            document.querySelector("footer").classList.add("footer--login");
-        } else {
-            // remove class from footer if present
-            document
-                .querySelector("footer")
-                .classList.remove("footer--login");
-        }
+        let previousUrl = '';
+        const observer = new MutationObserver(function(mutations) {
+            const currentUrl = location.href;
+            if (currentUrl !== previousUrl) {
+                previousUrl = currentUrl;
+                // if current url contains contains `login` or `register` then set class to footer
+                if (currentUrl.includes("login") || currentUrl.includes("register")) {
+                    document.querySelector("footer").classList.add("footer--login");
+                } else {
+                    // remove class from footer if present
+                    document
+                        .querySelector("footer")
+                        .classList.remove("footer--login");
+                }
+            }
+        });
+        observer.observe(document, {
+            childList: true,
+            subtree: true
+        });
+
     </script>
 </html>
