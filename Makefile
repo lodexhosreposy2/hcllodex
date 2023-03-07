@@ -60,7 +60,7 @@ production-deploy: ## Deploy HCL lodex to AWS
 	scp \
         -o StrictHostKeyChecking=no \
 		-i .secrets/hcl.pem \
-		docker-compose.yml config.json Makefile run-production.sh \
+		docker-compose.yml config.json theme Makefile run-production.sh \
 		${SERVER_USER}@${SERVER_HOSTNAME}:~
 
 	ssh \
