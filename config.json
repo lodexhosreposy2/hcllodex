@@ -171,6 +171,7 @@
         "fr": "Voir Plus"
       },
       "icon": "faBars"
-    }
+    },
+    "displayDensity": "dense"
   }
 }

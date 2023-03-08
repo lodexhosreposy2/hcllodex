@@ -1,5 +1,4 @@
-## Remove previous build cache, lodex folder, container and image
-rm -rf lodex
+## Remove previous build cache, container and image
 docker builder prune -f
 docker stop lodex-lodex-1
 docker rm lodex-lodex-1
