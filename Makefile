@@ -14,6 +14,7 @@ help:
 
 fetch-latest-lodex: ## Fetch the latest version of lodex
 	@echo "Fetching the latest version of lodex"
+	rm -r -f lodex.tar.gz lodex './Inist-CNRS-lodex-*' && \
 	curl -L https://api.github.com/repos/INIST-CNRS/lodex/tarball > lodex.tar.gz && \
 	tar -xzf lodex.tar.gz && \
 	mv ./Inist-CNRS-lodex-* lodex && \
