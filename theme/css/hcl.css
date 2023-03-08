@@ -29,6 +29,11 @@ body > .container {
 .header__content-logo {
     max-width: 100px;
 }
+
+.header__content-fake {
+    width: 0px;
+}
+
 .header__content-title {
     color: var(--white);
     font-size: 1.3em;
@@ -83,6 +88,20 @@ body > .container {
     fill: var(--white);
 }
 
+/* css rules for hidding content */
+.nav-bar-menu > .nav-bar-container > .nav-bar-icon:first-child {
+    display: none;
+}
+
+.nav-bar-menu > .nav-bar-container > .menu-item-link[href="/advanced"] {
+    display: none;
+}
+
+.nav-bar-menu > .nav-bar-container > .nav-bar-first {
+    width: 100%;
+    justify-content: center;
+}
+
 @media screen and (min-width: 768px) {
     .header {
         background-image: url('../assets/grid.png');
@@ -94,6 +113,9 @@ body > .container {
     }
     .header__content-title {
         font-size: 2em;
+    }
+    .header__content-fake {
+        width: 100px;
     }
 
     .header__content-grid {

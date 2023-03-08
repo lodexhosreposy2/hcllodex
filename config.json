@@ -4,10 +4,6 @@
   },
   "username": "admin",
   "password": "secret",
-  "userAuth": {
-    "username": "user",
-    "password": "secret"
-  },
   "#pluginsAPI": "http://lodex-extended:31976",
   "pluginsURL": "https://raw.githubusercontent.com/Inist-CNRS/lodex-extended/v7.10.0/public/",
   "enrichmentBatchSize": 10,
