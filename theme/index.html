@@ -16,9 +16,9 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         />
+        <link rel="icon" href="/assets/favicon.png" type="image/png" />
         <link rel="stylesheet" href="{|__JS_HOST__|}/styles.css" />
         <link rel="stylesheet" href="css/hcl.css" />
-
         <title>HCL: Hospices Civils de Lyon</title>
     </head>
 
@@ -42,7 +42,9 @@
         </div>
 
         <footer class="footer">
-            <a class="footer__link">www.chu-lyon.com</a>
+            <a class="footer__link" href="www.chu-lyon.com" target="_blank"
+                >www.chu-lyon.com</a
+            >
             <p class="footer__follow">Suivez-nous sur les réseaux</p>
             <div class="footer__socials">
                 <a
@@ -56,8 +58,8 @@
                         version="1.0"
                         x="0px"
                         y="0px"
-                        width="21"
-                        height="21"
+                        width="19"
+                        height="19"
                         viewBox="0 0 50 50"
                         class="icon icons8-Facebook-Filled"
                     >
@@ -140,25 +142,29 @@
 
     <script>
         let previousUrl = '';
-        const observer = new MutationObserver(function(mutations) {
+        const observer = new MutationObserver(function (mutations) {
             const currentUrl = location.href;
             if (currentUrl !== previousUrl) {
                 previousUrl = currentUrl;
                 // if current url contains contains `login` or `register` then set class to footer
-                if (currentUrl.includes("login") || currentUrl.includes("register")) {
-                    document.querySelector("footer").classList.add("footer--login");
+                if (
+                    currentUrl.includes('login') ||
+                    currentUrl.includes('register')
+                ) {
+                    document
+                        .querySelector('footer')
+                        .classList.add('footer--login');
                 } else {
                     // remove class from footer if present
                     document
-                        .querySelector("footer")
-                        .classList.remove("footer--login");
+                        .querySelector('footer')
+                        .classList.remove('footer--login');
                 }
             }
         });
         observer.observe(document, {
             childList: true,
-            subtree: true
+            subtree: true,
         });
-
     </script>
 </html>
