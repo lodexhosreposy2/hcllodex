@@ -171,6 +171,9 @@
         "fr": "Voir Plus"
       },
       "icon": "faBars"
-    }
+    },
+    "displayDensity": "dense",
+    "displayExportPDF": true,
+    "maxExportPDFSize": 500
   }
 }
