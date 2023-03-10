@@ -172,6 +172,8 @@
       },
       "icon": "faBars"
     },
-    "displayDensity": "dense"
+    "displayDensity": "dense",
+    "displayExportPDF": true,
+    "maxExportPDFSize": 500
   }
 }
