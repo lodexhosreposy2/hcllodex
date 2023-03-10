@@ -18,6 +18,9 @@ body > .container {
 
 .header {
     background-color: var(--blue-orage);
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 .header__content {
     color: var(--white);
@@ -27,7 +30,7 @@ body > .container {
     gap: 1rem;
 }
 .header__content-logo {
-    max-width: 100px;
+    max-width: 120px;
 }
 
 .header__content-fake {
@@ -38,6 +41,8 @@ body > .container {
     color: var(--white);
     font-size: 1.3em;
     padding: 0;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .footer {
@@ -74,18 +79,8 @@ body > .container {
     gap: 1rem;
 }
 
-.footer__socials-item {
-    background-color: var(--blue-hcl);
-    border-radius: 50%;
-    color: var(--white);
+.footer__socials-item > img {
     width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.footer__socials-item svg path {
-    fill: var(--white);
 }
 
 /* css rules for hidding content */
@@ -105,11 +100,13 @@ body > .container {
 @media screen and (min-width: 768px) {
     .header {
         background-image: url('../assets/grid.png');
+        background-size: contain;
         background-position: right;
         background-repeat: no-repeat;
     }
     .header__content {
         padding: 1rem 0px;
+        height: 192px;
     }
     .header__content-title {
         font-size: 2em;
