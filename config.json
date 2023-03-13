@@ -130,10 +130,10 @@
       },
       {
         "label": {
-          "en": "Search",
-          "fr": "Recherche"
+          "en": "List",
+          "fr": "Liste"
         },
-        "icon": "faSearch",
+        "icon": "faListAlt",
         "position": "left",
         "role": "search"
       },
