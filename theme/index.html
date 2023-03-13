@@ -25,7 +25,7 @@
     <body>
         <header class="header">
             <div class="header__content container">
-                <a href="/">
+                <a class="header__content-linkLogo" href="/">
                     <img
                         class="header__content-logo"
                         src="assets/logo.jpg"
@@ -117,5 +117,30 @@
             childList: true,
             subtree: true,
         });
+        // Add a class to the header when scrolling
+        let header = document.querySelector('header');
+
+        function debounce(func, timeout = 50) {
+            let timer;
+            return (...args) => {
+                clearTimeout(timer);
+                timer = setTimeout(() => {
+                    func.apply(this, args);
+                }, timeout);
+            };
+        }
+
+        // add debounce to the scroll event to add class to header
+        window.addEventListener(
+            'scroll',
+            debounce(function () {
+                let window_top = this.scrollY;
+                if (window_top > 0) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            }, 50),
+        );
     </script>
 </html>
