@@ -141,3 +141,21 @@ body > .container {
         transform: scale(0.5);
     }
 }
+
+/* css rules to display resource in "column" mode */
+@media screen and (min-width: 768px) {
+    .resource .detail .main-resource-section .property {
+        flex-direction: row;
+        gap: 1rem;
+    }
+    
+    .resource .detail .main-resource-section .property .property_label_container {
+        flex-basis: 90px;
+        padding-top: 0.5rem;
+        flex-shrink: 0;
+    }
+}
+
+.resource .detail .main-resource-section .property .property_label_container .property_label {
+    font-size: inherit!important;
+}
