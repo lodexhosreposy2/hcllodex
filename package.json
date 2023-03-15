@@ -1,6 +1,6 @@
 {
     "name": "lodex-theme-hcl",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "scripts": {
         "postversion": "git push && git push --tags",
         "insertversion:makefile": "sed -i \"s#\\(lodex-theme-hcl:\\)\\([\\.a-z0-9]\\+\\)#\\1${npm_package_version}#g\" Makefile",
