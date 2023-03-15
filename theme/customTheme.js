@@ -10,18 +10,23 @@ export default {
         },
         secondary: {
             main: colorsTheme.bleu_orage.primary,
+            contrastText: colorsTheme.white.primary,
         },
         info: {
             main: colorsTheme.bleu_pale.primary,
+            contrastText: colorsTheme.white.primary,
         },
         warning: {
             main: colorsTheme.orange.primary,
+            contrastText: colorsTheme.white.primary,
         },
         danger: {
             main: colorsTheme.red.primary,
+            contrastText: colorsTheme.white.primary,
         },
         success: {
             main: colorsTheme.green.primary,
+            contrastText: colorsTheme.white.primary,
         },
         neutral: {
             main: colorsTheme.gray.primary,
