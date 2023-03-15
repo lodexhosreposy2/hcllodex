@@ -1,4 +1,4 @@
-name: CI / CD Pipeline
+name: Deploy
 
 on:
   push:
@@ -9,6 +9,7 @@ on:
 jobs:
  
   deploy:
+    timeout-minutes: 30
     runs-on: ubuntu-latest
     environment: Deploy
     if: github.ref == 'refs/heads/main'

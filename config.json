@@ -171,10 +171,6 @@
             "display": true,
             "maxSize": 10000,
             "logo": "assets/logo.jpg",
-            "title": {
-                "en": "Sigaps publications validated in March",
-                "fr": "Publications Sigaps validées en Mars"
-            },
             "footer": {
                 "en": "HOSPICES CIVILS DE LYON | Documentation Centrale | 3-5 avenue Esquirol - CS 63752 | 69424 LYON Cedex 03 | France",
                 "fr": "HOSPICES CIVILS DE LYON | Documentation Centrale | 3-5 avenue Esquirol - CS 63752 | 69424 LYON Cedex 03 | France"
