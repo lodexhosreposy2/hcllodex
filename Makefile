@@ -73,6 +73,6 @@ production-deploy: ## Deploy HCL lodex to AWS
 
 build: ## Build the docker image locally
 	cd lodex && \
-	docker build -t ${DOCKER_LOGIN}/lodex-theme-hcl:1.0.9 --build-arg http_proxy --build-arg https_proxy .
+	docker build -t ${DOCKER_LOGIN}/lodex-theme-hcl:1.0.10 --build-arg http_proxy --build-arg https_proxy .
 publish: build  ## publish version to docker hub
-	docker push ${DOCKER_LOGIN}/lodex-theme-hcl:1.0.9
+	docker push ${DOCKER_LOGIN}/lodex-theme-hcl:1.0.10
