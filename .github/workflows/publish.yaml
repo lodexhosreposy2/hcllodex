@@ -11,6 +11,7 @@ jobs:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     environment: Publish
+    if: github.event.base_ref == 'refs/heads/main'
 
     steps:
     - name: Checkout
@@ -29,7 +30,7 @@ jobs:
         make setup-theme
 
     - name: Setup publish environment
-      run: echo 'DOCKER_LOGIN=${{ secrets.DOCKER_LOGIN }}' >> .secrets/.env
+      run: mkdir -p .secrets && echo 'DOCKER_LOGIN=${{ secrets.DOCKER_LOGIN }}' >> .secrets/.env
 
     - name: Run publish script
       shell: bash
