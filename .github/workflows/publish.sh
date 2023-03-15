@@ -1,7 +1,13 @@
 TAG=${GITHUB_REF##*/}
-BRANCH=$(git branch -r --contains tags/$TAG)
-echo $HEAD_TAG
-echo $BRANCH
+echo $TAG
+BRANCHES=$(git branch -r --contains tags/$TAG)
+echo $BRANCHES
+for BRANCH in $BRANCHES; do
+    echo $BRANCH
+#   if [[ $branch == "origin/main" ]]; then
+#     onProtectedBranch=true
+#   fi
+done
 if [ "$TAG" != "" ] && [ "$BRANCH" = "origin/main" ]
 then 
     echo "Publishing"
