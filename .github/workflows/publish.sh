@@ -1,8 +1,8 @@
-HEAD_TAG=$(git tag --points-at HEAD)
-REF=${GITHUB_REF##*/}
+TAG=${GITHUB_REF##*/}
+BRANCH=$(git branch -r --contains tags/$TAG)
 echo $HEAD_TAG
-echo $REF
-if [ "$HEAD_TAG" != "" ] && [ "$REF" = "main" ]
+echo $BRANCH
+if [ "$TAG" != "" ] && [ "$BRANCH" = "origin/main" ]
 then 
     echo "Publishing"
     dir_path=$(dirname $(realpath $0))
