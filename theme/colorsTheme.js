@@ -29,12 +29,12 @@ export default {
         primary: '#9dd3cf',
     },
     red: {
-        primary: '#f07e4c',
+        primary: '#FC7978',
     },
     green: {
         primary: '#c5d97a',
     },
     orange: {
-        primary: '#fab54d',
+        primary: '#f07e4c',
     },
 };
