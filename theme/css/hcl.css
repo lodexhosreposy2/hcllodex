@@ -109,7 +109,7 @@ body > .container {
 
 @media screen and (min-width: 768px) {
     body {
-        font-size: 1.5em;
+        line-height: 1.5;
     }
 }
 @media screen and (min-width: 768px) {
