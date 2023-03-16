@@ -1,17 +1,5 @@
 HEAD_TAG=$(git tag --points-at HEAD)
 REF=${GITHUB_REF##*/}
-echo "HEAD_TAG"
-echo $HEAD_TAG
-echo "REF"
-echo $REF
-if [ "$HEAD_TAG" != "" ]
-then 
-    echo "Tag OK" 
-fi
-if [ "$REF" = "main" ]
-then 
-    echo "Branche OK" 
-fi
 if [ "$HEAD_TAG" != "" ] && [ "$REF" = "main" ]
 then 
     echo "Publishing"
