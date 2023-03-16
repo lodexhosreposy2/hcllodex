@@ -12,8 +12,8 @@ jobs:
     timeout-minutes: 30
     runs-on: ubuntu-latest
     environment: Deploy
-    if: false
-    # if: github.ref == 'refs/heads/main'
+    # if: false
+    if: github.ref == 'refs/heads/main'
 
     steps:
     - name: Checkout
