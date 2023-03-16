@@ -108,6 +108,11 @@ body > .container {
 }
 
 @media screen and (min-width: 768px) {
+    body {
+        font-size: 1.5em;
+    }
+}
+@media screen and (min-width: 768px) {
     .header {
         background-image: url('../assets/grid.png');
         background-size: contain;
